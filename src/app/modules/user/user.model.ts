@@ -46,7 +46,7 @@ userSchema.pre('save', async function (next) {
   )
   next()
 })
-//remove user from response
+// remove user
 userSchema.methods.toJSON = function () {
   const obj = this.toObject()
   delete obj.password
@@ -54,4 +54,4 @@ userSchema.methods.toJSON = function () {
 }
 
 const User = model<TUser>('user', userSchema)
-export default User
+export default User;
