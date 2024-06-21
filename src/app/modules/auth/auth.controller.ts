@@ -2,7 +2,7 @@ import catchAsync from '../../utility/catchAsync'
 import sendResponse from '../../utility/sendResponse'
 import { AuthServices } from './auth.service'
 
-//signup user
+// signup user
 const registeredUser = catchAsync(async (req, res) => {
   const result = await AuthServices.registeredUserIntoDB(req.body)
   sendResponse(res, {
@@ -13,7 +13,7 @@ const registeredUser = catchAsync(async (req, res) => {
   })
 })
 
-//login user
+// login user
 const loginUser = catchAsync(async (req, res) => {
   const result = await AuthServices.loginUser(req.body)
   const { accessToken, user } = result

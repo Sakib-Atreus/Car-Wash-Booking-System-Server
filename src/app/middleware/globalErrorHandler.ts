@@ -11,7 +11,7 @@ import AppError from '../Error/AppError'
 import handleError from '../Error/handleError'
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
-  // Check if headers are already sent to prevent setting them again
+  // Check if headers are already sent to prevent setting
   if (res.headersSent) {
     return next(err)
   }
@@ -24,12 +24,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
       message: 'Something went wrong!',
     },
   ]
-  /**
-   * error patterns
-   * success: boolean
-   * message: string
-   * errorSources
-   */
+
   if (err?.name === 'ValidationError') {
     // handling mongoose validation error
     const simplifiedErrorResponse = handleValidationError(err)
@@ -69,4 +64,4 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   })
 }
 
-export default globalErrorHandler
+export default globalErrorHandler;

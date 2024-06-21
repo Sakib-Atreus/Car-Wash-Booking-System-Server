@@ -18,4 +18,4 @@ const handleDuplicateError = (err: any) => {
   }
 }
 
-export default handleDuplicateError
+export default handleDuplicateError;

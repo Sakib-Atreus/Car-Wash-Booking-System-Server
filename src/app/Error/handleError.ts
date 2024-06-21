@@ -7,4 +7,4 @@ const handleError = (err: any) => {
     message,
   }
 }
-export default handleError
+export default handleError;

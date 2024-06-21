@@ -17,4 +17,4 @@ const handleValidationError = (err: mongoose.Error.ValidationError) => {
   }
 }
 
-export default handleValidationError
+export default handleValidationError;

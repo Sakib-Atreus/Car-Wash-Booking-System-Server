@@ -8,10 +8,10 @@ const buildQuery = async <T>(
   // searchQuery
   let queryConstructor = modelQuery.find()
 
-  // map serviceId to service if provided
+  // serviceId to service if provided
   if (query['serviceId']) {
-    query['service'] = query['serviceId'];
-    delete query['serviceId'];
+    query['service'] = query['serviceId']
+    delete query['serviceId']
   }
 
   let searchTerm = ''
@@ -24,7 +24,7 @@ const buildQuery = async <T>(
     } as FilterQuery<T>)
   }
 
-  //filter query
+  // filter query
   const queryObj = { ...query }
   const excludesFields = [
     'searchTerm',
@@ -37,14 +37,14 @@ const buildQuery = async <T>(
   excludesFields.forEach(ele => delete queryObj[ele])
   queryConstructor = queryConstructor.find(queryObj as FilterQuery<T>)
 
-  //sort query
+  // sort query
   let sort = '-createdAt'
   if (query?.sort) {
     sort = (query?.sort as string).split(',').join(' ')
     queryConstructor = queryConstructor.sort(sort)
   }
 
-  //paginate query
+  // paginate query
   let limit = 1
   let page = 1
   let skip = 0
@@ -58,7 +58,7 @@ const buildQuery = async <T>(
     queryConstructor = queryConstructor.skip(skip)
   }
 
-  //fields filtering
+  // fields filtering
   let fields = '-__v'
   if (query?.fields) {
     fields = (query?.fields as string).split(',').join(' ')
@@ -68,4 +68,4 @@ const buildQuery = async <T>(
   return queryConstructor
 }
 
-export default buildQuery
+export default buildQuery;

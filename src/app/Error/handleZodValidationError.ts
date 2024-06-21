@@ -17,4 +17,4 @@ const handleZodValidationError = (err: ZodError) => {
   }
 }
 
-export default handleZodValidationError
+export default handleZodValidationError;
