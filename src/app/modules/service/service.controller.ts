@@ -12,7 +12,7 @@ const createService = catchAsync(async (req, res) => {
     data: result,
   })
 })
-//get single service
+// get single service
 const getSpecificService = catchAsync(async (req, res) => {
   const { id } = req.params
   const result = await ServiceServices.getSpecificServiceFromDB(id)
@@ -24,7 +24,7 @@ const getSpecificService = catchAsync(async (req, res) => {
   })
 })
 
-//get all services
+// get all services
 const getAllServicesFromDB = catchAsync(async (req, res) => {
   const result = await ServiceServices.getAllServicesFromDB()
   sendResponse(res, {
@@ -37,7 +37,7 @@ const getAllServicesFromDB = catchAsync(async (req, res) => {
   })
 })
 
-//get all services
+// get all services
 const updateService = catchAsync(async (req, res) => {
   const { id } = req.params
   const result = await ServiceServices.updateServiceIntoDB(id, req.body)
@@ -49,7 +49,7 @@ const updateService = catchAsync(async (req, res) => {
   })
 })
 
-//delete service
+// delete service
 const deleteService = catchAsync(async (req, res) => {
   const { id } = req.params
   const result = await ServiceServices.deleteServiceFromDB(id)

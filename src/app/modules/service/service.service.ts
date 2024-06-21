@@ -3,32 +3,31 @@ import { TService } from './service.interface'
 import Service from './service.model'
 import status from 'http-status'
 
-//create service
+// create service
 const createServiceIntoDB = async (payload: TService) => {
   const result = await Service.create(payload)
   return result
 }
 
-//get single service
+// get single service
 const getSpecificServiceFromDB = async (id: string) => {
   const result = await Service.findById(id)
-  //check result
   if (!result) {
     throw new AppError(404, 'Service not found!')
   }
   return result
 }
 
-//get all services
+// get all services
 const getAllServicesFromDB = async () => {
   const result = await Service.find()
   return !result.length ? [] : result
 }
 
-//update service
+// update service
 const updateServiceIntoDB = async (id: string, payload: Partial<TService>) => {
   const service = await Service.isServiceExists(id)
-  //check isService exists
+  // check isService exists
   if (!service) {
     throw new AppError(status.NOT_FOUND, 'Service not found!')
   }
@@ -40,14 +39,14 @@ const updateServiceIntoDB = async (id: string, payload: Partial<TService>) => {
   return result
 }
 
-//delete service
+// delete service
 const deleteServiceFromDB = async (id: string) => {
   const service = await Service.isServiceExists(id)
-  //check isService exists
+  // check isService exists
   if (!service) {
     throw new AppError(status.NOT_FOUND, 'Service not found!')
   }
-  //check is service deleted
+  // check is service deleted
   if (service?.isDeleted) {
     throw new AppError(status.NOT_FOUND, 'Service already deleted!')
   }

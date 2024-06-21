@@ -28,7 +28,7 @@ const serviceSchema = new Schema<TService, ServiceModel>(
   { timestamps: true },
 )
 
-//isServiceExists statics method
+// isServiceExists statics method
 serviceSchema.statics.isServiceExists = async function (id: string) {
   return await Service.findById(id)
 }
