@@ -7,6 +7,7 @@ import { USER_ROLE } from '../user/user.constant'
 
 const router = Router()
 
+// create slot
 router.post(
   '/slots',
   auth(USER_ROLE.admin),
@@ -14,6 +15,7 @@ router.post(
   SlotControllers.createSlot,
 )
 
+// get all slots
 router.get('/availability', SlotControllers.getAllSlots)
 
-export const SlotRoutes = router
+export const SlotRoutes = router;

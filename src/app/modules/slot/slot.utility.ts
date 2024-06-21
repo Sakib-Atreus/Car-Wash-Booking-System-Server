@@ -16,11 +16,11 @@ const createSlots = (
     parseInt(endTime.split(':')[1])
   // calculate total duration
   const totalDuration = endMinutes - startMinutes
-  //   calculate number of slots
+  // calculate number of slots
   const numberOfSlots = totalDuration / serviceDuration
   const slots = []
   for (let i = 0; i < numberOfSlots; i++) {
-    //convert slot start time and end time by iteration value
+    // convert slot start time and end time by iteration value
     const slotStartTime = startMinutes + i * serviceDuration
     const slotEndTime = slotStartTime + serviceDuration
 
@@ -32,7 +32,7 @@ const createSlots = (
       .toString()
       .padStart(2, '0')
     const endMins = (slotEndTime % 60).toString().padStart(2, '0')
-    //push object to the slots
+    // push object to the slots
     slots.push({
       service,
       date,
@@ -44,4 +44,4 @@ const createSlots = (
   return slots
 }
 
-export default createSlots
+export default createSlots;

@@ -2,7 +2,7 @@ import catchAsync from '../../utility/catchAsync'
 import sendResponse from '../../utility/sendResponse'
 import { SlotServices } from './slot.service'
 
-//create slots
+// create slots into db
 const createSlot = catchAsync(async (req, res) => {
   const result = await SlotServices.createSlotIntoDB(req.body)
   sendResponse(res, {
@@ -12,7 +12,7 @@ const createSlot = catchAsync(async (req, res) => {
     data: result,
   })
 })
-//get all slots from db
+// get all slots from db
 const getAllSlots = catchAsync(async (req, res) => {
   const query = req.query
   const result = await SlotServices.getAllSlotsFromDB(query)

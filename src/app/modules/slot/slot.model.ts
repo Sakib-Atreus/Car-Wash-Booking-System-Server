@@ -31,4 +31,4 @@ const slotSchema = new Schema<TSlot>(
 )
 
 const Slot = model<TSlot>('slot', slotSchema)
-export default Slot
+export default Slot;
