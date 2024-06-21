@@ -11,4 +11,4 @@ const sendResponse = <T>(res: Response, data: TData<T>) => {
   })
 }
 
-export default sendResponse
+export default sendResponse;

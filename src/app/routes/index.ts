@@ -33,4 +33,4 @@ moduleRoutes.forEach(route => {
   router.use(route.path, route.route)
 })
 
-export const routes = router
+export const routes = router;
