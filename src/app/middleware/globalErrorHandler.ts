@@ -32,19 +32,19 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     message = simplifiedErrorResponse.message
     errorMessages = simplifiedErrorResponse.errorSources
   } else if (err?.code === 11000) {
-    //handling duplicate error
+    // handling duplicate error
     const simplifiedErrorResponse = handleDuplicateError(err)
     statusCode = simplifiedErrorResponse.statusCode
     message = simplifiedErrorResponse.message
     errorMessages = simplifiedErrorResponse.errorSources
   } else if (err?.name === 'CastError') {
-    //handling cast error
+    // handling cast error
     const simplifiedErrorResponse = handleCastError(err)
     statusCode = simplifiedErrorResponse.statusCode
     message = simplifiedErrorResponse.message
     errorMessages = simplifiedErrorResponse.errorSources
   } else if (err instanceof ZodError) {
-    //handing zod validation error
+    // handing zod validation error
     const simplifiedErrorResponse = handleZodValidationError(err)
     statusCode = simplifiedErrorResponse.statusCode
     message = simplifiedErrorResponse.message
