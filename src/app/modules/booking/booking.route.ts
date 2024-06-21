@@ -26,4 +26,4 @@ router.get(
   BookingControllers.getUserBookings,
 )
 
-export const BookingRoutes = router
+export const BookingRoutes = router;
