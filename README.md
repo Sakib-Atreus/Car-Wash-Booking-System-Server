@@ -8,6 +8,7 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
+- [Contact](#contact)
 
 ## Introduction
 
